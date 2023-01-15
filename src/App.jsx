@@ -49,7 +49,7 @@ function App() {
           <span>
             Obtuviste {puntuación} de {preguntasMezcladas.length}{" "}
           </span>
-          <button onClick={() => (window.location.href = "/")}>
+          <button onClick={() => (window.location.href = window.location.href)}>
             Volver a jugar
           </button>
           <button
@@ -90,7 +90,7 @@ function App() {
           <button
             onClick={() => {
               if (preguntaActual === preguntasMezcladas.length - 1) {
-                window.location.href = "/";
+                window.location.href = window.location.href;
               } else {
                 setPreguntaActual(preguntaActual + 1);
               }

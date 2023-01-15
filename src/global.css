@@ -153,7 +153,8 @@ button svg {
   .app {
     min-width: 250px;
     flex-direction: column;
-    min-height: 400px;
+    min-height: 400px;    
+    box-shadow: none;
   }
   .lado-derecho {
     min-width: 250px;
@@ -172,5 +173,10 @@ button svg {
 
   .movilBtnContinue{
     display: block;
+  }
+  
+  body {
+    margin: 0;
+    background-color: #252d4a;
   }
 }
