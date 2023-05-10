@@ -10,11 +10,15 @@ function App() {
   const [puntuación, setPuntuación] = useState(0);
   const [isFinished, setIsFinished] = useState(false);
   const [tiempoRestante, setTiempoRestante] = useState(120);
-  const [randomNumber, setRandomNumber] = useState(Math.floor(Math.random() * 10) + 0);
-  const [preguntasMezcladas, setPreguntasMezcladas] = useState(
-    shuffle(preguntas.slice(randomNumber, randomNumber+5))
+  const [randomNumber, setRandomNumber] = useState(
+    Math.floor(Math.random() * 10) + 0
   );
-  const [cincoPreguntas, setCincoPreguntas] = useState(preguntas.slice(randomNumber, randomNumber+5))  
+  const [preguntasMezcladas, setPreguntasMezcladas] = useState(
+    shuffle(preguntas.slice(randomNumber, randomNumber + 5))
+  );
+  const [cincoPreguntas, setCincoPreguntas] = useState(
+    preguntas.slice(randomNumber, randomNumber + 5)
+  );
   const [areDisabled, setAreDisabled] = useState(false);
   const [answersShown, setAnswersShown] = useState(false);
 
@@ -46,6 +50,7 @@ function App() {
     return (
       <main className="app">
         <div className="juego-terminado">
+          <p>testing git branches</p>
           <span>
             Obtuviste {puntuación} de {preguntasMezcladas.length}{" "}
           </span>
@@ -70,7 +75,8 @@ function App() {
       <main className="app">
         <div className="lado-izquierdo">
           <div className="numero-pregunta">
-            <span> Pregunta {preguntaActual + 1} de</span> {preguntasMezcladas.length}
+            <span> Pregunta {preguntaActual + 1} de</span>{" "}
+            {preguntasMezcladas.length}
           </div>
           <div className="titulo-pregunta">
             {preguntasMezcladas[preguntaActual].titulo}
@@ -80,7 +86,8 @@ function App() {
               {preguntasMezcladas[preguntaActual].codigo}
             </SyntaxHighlighter>
           </div>
-          <div className="resContainer" >Respuesta: <span></span>
+          <div className="resContainer">
+            Respuesta: <span></span>
             {
               preguntasMezcladas[preguntaActual].opciones.filter(
                 (opcion) => opcion.isCorrect
@@ -108,7 +115,8 @@ function App() {
     <main className="app">
       <div className="lado-izquierdo">
         <div className="numero-pregunta">
-          <span> Pregunta {preguntaActual + 1} de</span> {preguntasMezcladas.length}
+          <span> Pregunta {preguntaActual + 1} de</span>{" "}
+          {preguntasMezcladas.length}
         </div>
         <div className="titulo-pregunta">
           {preguntasMezcladas[preguntaActual].titulo}
